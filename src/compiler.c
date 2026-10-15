@@ -27,11 +27,16 @@ int main(int argc, char *argv[])
 
     fclose(fptr);
 
-    // printf("finished tokenisation...\n");
-    // for (int i = 0; i < tokenResult.numTokens; i++)
-    // {
-    //     printf("token %d : %s \n", i, tokenResult.tokens[i]);
-    // }
+    printf("finished tokenisation...\n");
+    for (int i = 0; i < tokenResult.numTokens; i++)
+    {
+        if (strcmp(tokenResult.tokens[i], "\n") == 0) {
+            printf("token %d : \\n \n", i);
+        }
+        else {
+            printf("token %d : %s \n", i, tokenResult.tokens[i]);
+        }
+    }
 
     parseTokens(&tokenResult);
 

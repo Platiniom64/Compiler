@@ -73,7 +73,7 @@ tokenResult tokenise(FILE *fptr)
             result.tokens[result.numTokens] = newtoken;
             result.numTokens++;
         }
-        else if (c == '(' || c == ')' || c == '=' || c == '+' || c == '-')
+        else if (c == '\n' || c == '(' || c == ')' || c == '=' || c == '+' || c == '-'|| c == '/' || c == '*')
         {
             // create new token
             char *newtoken = malloc(2 * sizeof(char));
